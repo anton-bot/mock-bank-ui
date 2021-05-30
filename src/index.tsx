@@ -5,6 +5,12 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { ENABLE_MOCK_BACKEND } from './constants';
+import { createMockBackend } from './api/mocks/server';
+
+if (ENABLE_MOCK_BACKEND) {
+  createMockBackend();
+}
 
 ReactDOM.render(
   <React.StrictMode>
