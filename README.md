@@ -17,4 +17,4 @@ To be implemented.
 
 - Used Mirage to mock the backend. This will allow us to quickly switch to a real backend, once it's implemented, without any code changes.
 
-- Used currency.js to avoid floating point issues (the `0.1 + 0.2` problem, the `(1.005).toFixed(2)` problem)
+- Used integer numbers and currency.js for storing dollar amounts to avoid floating point issues (the `0.1 + 0.2` problem, the `(1.005).toFixed(2)` problem)
