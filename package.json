@@ -12,6 +12,7 @@
     "@types/react": "^16.14.7",
     "@types/react-dom": "^16.9.13",
     "@types/react-redux": "^7.1.16",
+    "axios": "^0.21.1",
     "currency.js": "^2.0.4",
     "moment": "^2.29.1",
     "react": "^17.0.2",
@@ -47,6 +48,7 @@
   "devDependencies": {
     "@types/uuid": "^8.3.0",
     "jest-localstorage-mock": "^2.4.13",
+    "miragejs": "^0.1.41",
     "node-sass": "^6.0.0",
     "prettier": "2.3.0"
   },

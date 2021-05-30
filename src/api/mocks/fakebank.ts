@@ -13,10 +13,8 @@ const DEFAULT_ACCOUNT_BALANCE = 1000000;
 
 export const getStorage = () => {
   const existingStorage = localStorage.getItem(LOCAL_STORAGE_KEY);
-  return existingStorage
-    ? JSON.parse(existingStorage)
-    : initializeStorage();
-}
+  return existingStorage ? JSON.parse(existingStorage) : initializeStorage();
+};
 
 export const initializeStorage = () => {
   saveStorage(DEFAULT_STORAGE);
@@ -28,7 +26,8 @@ export const initializeStorage = () => {
   return JSON.parse(storage);
 };
 
-export const getAccounts = (user: string): BankAccount[] => getStorage()[user] ?? initializeNewUser(user);
+export const getAccounts = (user: string): BankAccount[] =>
+  getStorage()[user] ?? initializeNewUser(user);
 
 export const initializeNewUser = (user: string): BankAccount[] =>
   DEFAULT_ACCOUNTS.map(createBankAccount(user));
@@ -59,7 +58,12 @@ const saveAccountState = (user: string, account: BankAccount) => {
 const saveStorage = (storage: MockDataStorage) =>
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(storage));
 
-export const transfer = (user: string, fromAccountId: string, toAccountId: string, amount: number) => {
+export const transfer = (
+  user: string,
+  fromAccountId: string,
+  toAccountId: string,
+  amount: number,
+) => {
   const accounts = getAccounts(user);
   const fromAccount = accounts.find(byAccountId(fromAccountId));
   const toAccount = accounts.find(byAccountId(toAccountId));
@@ -72,11 +76,7 @@ export const transfer = (user: string, fromAccountId: string, toAccountId: strin
     throw new Error(`Invalid to account ${toAccountId} when transferring money`);
   }
 
-  const modifiedAccounts = createTransferTransactions(
-    fromAccount,
-    toAccount,
-    amount,
-  );
+  const modifiedAccounts = createTransferTransactions(fromAccount, toAccount, amount);
   saveAccountState(user, modifiedAccounts.from);
   saveAccountState(user, modifiedAccounts.to);
 };
