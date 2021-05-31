@@ -1,8 +1,33 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import './App.scss';
+import { fetchAccounts } from './app/store/accountsSlice';
+import { AccountList } from './screens/AccountList/AccountList';
 
 function App() {
-  return <div className="App">It works.</div>;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAccounts());
+  }, [dispatch]);
+
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <AccountList />
+          </Route>
+          <Route path="/app/accounts">
+            <AccountList />
+          </Route>
+          <Route path="/app/transfer">
+            <div>TODO: transfer screen</div>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

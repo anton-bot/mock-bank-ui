@@ -1,6 +1,5 @@
 import { BankAccount } from '../../types/BankAccount';
 import { Currency } from '../../types/Currency';
-import Amount from 'currency.js';
 import { MockDataStorage } from '../../types/MockDataStorage';
 import { v4 as uuid } from 'uuid';
 import { AccountTransactionType } from '../../types/AccountTransactionType';

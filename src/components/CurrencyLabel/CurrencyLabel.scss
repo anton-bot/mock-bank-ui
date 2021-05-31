@@ -1,0 +1,13 @@
+.CurrencyLabel {
+  color: white;
+  border-radius: 0.25em;
+  padding: 0.25em;
+
+  &.HKD {
+    background-color: crimson;
+  }
+
+  &.USD {
+    background-color: darkgreen;
+  }
+}
