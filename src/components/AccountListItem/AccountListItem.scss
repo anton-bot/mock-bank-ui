@@ -15,5 +15,7 @@
   .balance {
     text-align: right;
     font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: center;
   }
 }

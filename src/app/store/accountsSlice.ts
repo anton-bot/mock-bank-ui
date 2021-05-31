@@ -11,10 +11,7 @@ const initialState: AccountsState = {
   accounts: undefined,
 };
 
-export const fetchAccounts = createAsyncThunk('accounts/getAccounts', () => {
-  console.log('getting data');
-  return getAccounts();
-});
+export const fetchAccounts = createAsyncThunk('accounts/getAccounts', getAccounts);
 
 export const accountsSlice = createSlice({
   name: 'accounts',
@@ -26,10 +23,22 @@ export const accountsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAccounts.fulfilled, (state, action) => {
-      state.accounts = action.payload;
+      state.accounts = action.payload.sort(byCurrencyAndAccountNumber);
     });
   },
 });
+
+const byCurrencyAndAccountNumber = (a: BankAccount, b: BankAccount): number => {
+  if (a.currency < b.currency) {
+    return -1;
+  }
+
+  if (a.currency > b.currency) {
+    return 1;
+  }
+
+  return a.accountNumber.localeCompare(b.accountNumber);
+};
 
 export const { setAccounts } = accountsSlice.actions;
 

@@ -22,3 +22,5 @@ To be implemented.
 ## Technical debt
 
 - Handle API errors
+- Add loading indicator
+- Add animation for hamburger menu on mobile
