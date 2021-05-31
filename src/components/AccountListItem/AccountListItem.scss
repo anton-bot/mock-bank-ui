@@ -1,0 +1,19 @@
+.AccountListItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  cursor: pointer;
+
+  .metadata {
+    display: flex;
+
+    .AccountNumber {
+      margin-left: 0.5em;
+    }
+  }
+
+  .balance {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+}
