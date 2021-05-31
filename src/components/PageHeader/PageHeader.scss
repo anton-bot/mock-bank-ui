@@ -1,0 +1,15 @@
+@import '../../styles/common.scss';
+
+.PageHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+
+  .Logo {
+    width: 10em;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding: 0;
+  }
+}

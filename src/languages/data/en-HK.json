@@ -1,0 +1,15 @@
+{
+  "menu": [
+    {
+      "text": "Accounts",
+      "link": "/app/accounts"
+    },
+    {
+      "text": "Transfer Money",
+      "link": "/app/transfer"
+    }
+  ],
+  "accountList": {
+    "title": "My Bank Accounts"
+  }
+}
