@@ -11,5 +11,14 @@
   ],
   "accountList": {
     "title": "My Bank Accounts"
+  },
+  "viewAccount": {
+    "title": "{currency} Account {number}",
+    "buttons": {
+      "back": "Back to accounts"
+    },
+    "messages": {
+      "noTransactions": "No transactions yet"
+    }
   }
 }

@@ -1,0 +1,33 @@
+.TransactionListItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      text-align: left;
+      padding-right: 2em;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    .datetime {
+      font-size: 0.85em;
+      color: gray;
+      text-transform: uppercase;
+    }
+
+    .amount {
+      font-weight: bold;
+
+      &.credit {
+        color: green;
+      }
+    }
+  }
+}

@@ -37,7 +37,15 @@ const createBankAccount = (user: string) => (currency: Currency) => {
     accountId: uuid(),
     accountNumber: generateRandomAccountNumber(),
     balance: DEFAULT_ACCOUNT_BALANCE,
-    transactions: [],
+    transactions: [
+      {
+        amount: DEFAULT_ACCOUNT_BALANCE,
+        transactionId: uuid(),
+        type: AccountTransactionType.credit,
+        datetime: new Date().toISOString(),
+        description: 'Initial balance',
+      },
+    ],
   };
   saveAccountState(user, account);
   return account;
