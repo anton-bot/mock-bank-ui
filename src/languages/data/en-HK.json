@@ -20,5 +20,28 @@
     "messages": {
       "noTransactions": "No transactions yet"
     }
+  },
+  "transfer": {
+    "title": "Transfer Money",
+    "buttons": {
+      "transfer": "Complete Transfer"
+    }
+  },
+  "transferCompleted": {
+    "title": "Transfer Completed"
+  },
+  "form": {
+    "from": {
+      "label": "From Account:",
+      "invalid": "Please select an account."
+    },
+    "to": {
+      "label": "To Account:"
+    },
+    "amount": {
+      "label": "Amount:",
+      "invalid": "Please enter a number",
+      "insufficientFunds": "Not enough funds on this account"
+    }
   }
 }

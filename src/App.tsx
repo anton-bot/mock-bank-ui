@@ -7,6 +7,8 @@ import { Layout } from './components/Layout/Layout';
 import { AccountList } from './screens/AccountList/AccountList';
 import { Page } from './types/Page';
 import { ViewAccount } from './screens/ViewAccount/ViewAccount';
+import { TransferBetweenAccounts } from './screens/TransferBetweenAccounts/TransferBetweenAccounts';
+import { TransferCompleted } from './screens/TransferCompleted/TransferCompleted';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +29,10 @@ function App() {
               <AccountList />
             </Route>
             <Route path={Page.transfer}>
-              <div>TODO: transfer screen</div>
+              <TransferBetweenAccounts />
+            </Route>
+            <Route path={Page.transferCompleted}>
+              <TransferCompleted />
             </Route>
           </Switch>
         </Layout>
