@@ -1,2 +1,19 @@
 .ViewAccount {
+  .balance {
+    font-size: 1.5em;
+    background: black;
+    color: white;
+    display: inline-block;
+    padding: 0.25em 1em;
+    border-radius: 0.5em;
+    font-weight: bold;
+  }
+
+  .transactions {
+    margin: 1em 0;
+
+    .TransactionListItem:not(:last-child) {
+      border-bottom: 1px solid gainsboro;
+    }
+  }
 }
