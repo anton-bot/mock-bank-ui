@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { getAccountById } from '../../app/store/accountsSlice';
+import { selectAccountById } from '../../app/store/accountsSlice';
 import { PageTitle } from '../../components/PageTitle/PageTitle';
 import { formatBankAccountNumber } from '../../functions/formatBankAccountNumber';
 import { formatCurrency } from '../../functions/formatCurrency';
@@ -16,7 +16,7 @@ type Props = RouteComponentProps<{
 
 export const ViewAccount: React.FC<Props> = (props) => {
   const { accountId } = props.match.params;
-  const account = useSelector(getAccountById(accountId));
+  const account = useSelector(selectAccountById(accountId));
   const text = lang().viewAccount;
 
   if (!account) {

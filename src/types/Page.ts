@@ -3,4 +3,5 @@ export enum Page {
   accountList = '/app/accounts',
   viewAccount = '/app/accounts/:accountId',
   transfer = '/app/transfer',
+  transferCompleted = '/app/transfer-completed',
 }

@@ -17,15 +17,14 @@ export const fetchAccounts = createAsyncThunk('accounts/getAccounts', getAccount
 export const accountsSlice = createSlice({
   name: 'accounts',
   initialState,
-  reducers: {
-    setAccounts: (state, action: PayloadAction<BankAccount[]>) => {
-      action.payload.forEach((a) => a.transactions.sort(byDatetimeDesc));
-      state.accounts = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchAccounts.fulfilled, (state, action) => {
-      state.accounts = action.payload.sort(byCurrencyAndAccountNumber);
+      const accounts = action.payload.map((a) => ({
+        ...a,
+        transactions: a.transactions.sort(byDatetimeDesc),
+      }));
+      state.accounts = accounts.sort(byCurrencyAndAccountNumber);
     });
   },
 });
@@ -45,11 +44,9 @@ const byCurrencyAndAccountNumber = (a: BankAccount, b: BankAccount): number => {
 const byDatetimeDesc = (a: AccountTransaction, b: AccountTransaction): number =>
   b.datetime.localeCompare(a.datetime);
 
-export const { setAccounts } = accountsSlice.actions;
-
 export const selectAccounts = (state: RootState) => state.accounts.accounts;
 
-export const getAccountById = (accountId: string) => (state: RootState) =>
+export const selectAccountById = (accountId: string) => (state: RootState) =>
   state.accounts.accounts?.find((a) => a.accountId === accountId);
 
 export default accountsSlice.reducer;
