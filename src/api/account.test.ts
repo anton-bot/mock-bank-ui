@@ -4,14 +4,16 @@ import { createMockBackend } from './mocks/server';
 
 describe('Account API', () => {
   it('must retrieve a list of accounts from API', async () => {
-    createMockBackend();
+    const server = createMockBackend();
 
     const accounts = await getAccounts();
     expect(accounts.length).toBe(4);
+
+    server.shutdown();
   });
 
   it('must make a transfer between accounts', async () => {
-    createMockBackend();
+    const server = createMockBackend();
 
     const accounts = await getAccounts();
     expect(accounts.length).toBe(4);
@@ -27,5 +29,7 @@ describe('Account API', () => {
     expect(accounts2.some((a) => a.accountId === usdAccountIds[1] && a.balance === 2000000)).toBe(
       true,
     );
+
+    server.shutdown();
   });
 });

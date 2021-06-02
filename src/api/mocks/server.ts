@@ -2,7 +2,8 @@ import { createServer, Request } from 'miragejs';
 import { getAccounts, transfer } from './fakebank';
 
 export function createMockBackend() {
-  createServer({
+  return createServer({
+    logging: false,
     routes() {
       this.get('/account', (schema, request) => {
         return getAccounts(getUsername(request));

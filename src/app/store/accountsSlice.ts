@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getAccounts } from '../../api/account';
 import { AccountTransaction } from '../../types/AccountTransaction';
 import { BankAccount } from '../../types/BankAccount';
