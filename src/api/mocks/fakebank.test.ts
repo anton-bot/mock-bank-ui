@@ -4,7 +4,6 @@ import { Currency } from '../../types/Currency';
 import {
   generateRandomAccountNumber,
   getAccounts,
-  getStorage,
   getTransactionDescription,
   initializeNewUser,
   initializeStorage,
@@ -37,7 +36,7 @@ describe('Mock banking backend based on localStorage', () => {
       expect(account.accountNumber).toMatch(VALID_ACCOUNT_NUMBER);
       expect(account.balance).toBe(1000000);
       expect(Object.values(Currency)).toContain(account.currency);
-      expect(account.transactions.length).toBe(0);
+      expect(account.transactions.length).toBe(1);
     });
   });
 
