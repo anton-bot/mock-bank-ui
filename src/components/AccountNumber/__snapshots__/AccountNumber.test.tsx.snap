@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account Number matches snapshot 1`] = `
+<div
+  className="AccountNumber"
+>
+  123-4567-890
+</div>
+`;

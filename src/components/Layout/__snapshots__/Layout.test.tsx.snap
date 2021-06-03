@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="Layout"
+>
+  <div
+    className="PageHeader"
+  >
+    <div>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt=""
+          className="Logo"
+          src="bankone.png"
+        />
+      </a>
+    </div>
+    <div>
+      <div
+        className="SiteMenu collapsed"
+      >
+        <div
+          className="hamburger"
+          onClick={[Function]}
+        >
+          ☰
+        </div>
+        <div
+          className="menu-items"
+        >
+          <a
+            href="/app/accounts"
+            onClick={[Function]}
+          >
+            Accounts
+          </a>
+          <a
+            href="/app/transfer"
+            onClick={[Function]}
+          >
+            Transfer Money
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="main-content"
+  >
+    Sample text
+  </div>
+</div>
+`;

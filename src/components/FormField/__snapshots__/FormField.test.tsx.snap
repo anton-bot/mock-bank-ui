@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Field matches snapshot 1`] = `
+<div
+  className="FormField"
+>
+  <div
+    className="label"
+  >
+    Account Number
+  </div>
+  <div
+    className="control"
+  >
+    <input />
+  </div>
+</div>
+`;
