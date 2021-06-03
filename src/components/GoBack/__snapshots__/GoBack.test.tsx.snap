@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Go back link matches snapshot 1`] = `
+<div
+  className="GoBack"
+>
+  <a
+    href="/test"
+    onClick={[Function]}
+  >
+    Go back to main page
+  </a>
+</div>
+`;
